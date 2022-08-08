@@ -1,13 +1,17 @@
-FROM ubuntu
-LABEL author="Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="0.0.1"
+FROM archlinux
+MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
+LABEL version="0.1.0"
 LABEL description="LLVM Workstation"
 
-COPY sources.list /etc/apt/sources.list
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y clang lldb lld && \
-    useradd -m -G root -s /usr/bin/bash redraiment
+COPY mirrorlist /etc/pacman.d/
+RUN pacman -Syy --noconfirm && \
+    pacman -Fy --noconfirm && \
+    pacman -Syu --noconfirm && \
+    pacman -S --noconfirm vim sudo fish clang llvm lld lldb && \
+    useradd -m -G wheel -s /usr/bin/fish redraiment && \
+    sudo -u redraiment mkdir -p /home/redraiment/workspaces
+COPY sudoers /etc/
 
-USER redraiment:redraiment
-WORKDIR /home/redraiment/workspaces
+USER redraiment
+WORKDIR /home/redraiment
+CMD /usr/bin/fish

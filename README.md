@@ -3,6 +3,7 @@ Docker LLVM
 
 My LLVM workstation.
 
-* FROM [ubuntu](https://hub.docker.com/_/ubuntu)
+* FROM [ArchLinux](https://hub.docker.com/_/archlinux)
+* Setup USTC mirrors.
 * Set default user to redraiment.
-* Setup USTC apt mirrors.
+* Set default shell to fish.
