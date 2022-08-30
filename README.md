@@ -1,4 +1,4 @@
-# Docker Clojure
+# Clojure docker image
 
 This [repository](https://github.com/redraiment/docker-clojure) is my Clojure development environment.
 
