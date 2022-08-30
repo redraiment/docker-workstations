@@ -1,8 +1,7 @@
-Docker Python
-====
+# Python docker image
 
-My Python workstation.
+This [repository](https://github.com/redraiment/docker-python) is my Python development environment.
 
 * FROM [redraiment/ArchLinux](https://hub.docker.com/redraiment/archlinux)
-* Install Python and pip.
-* Install ipython and jupyter.
+* Setting Python and pip.
+* Setting ipython and jupyter.

@@ -1,7 +1,7 @@
 FROM redraiment/archlinux
 MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2022.08.20"
-LABEL description="Python Workstation"
+LABEL version="2022.08.30"
+LABEL description="Python development environment"
 
 COPY --chown=redraiment:redraiment pip.conf /home/redraiment/.pip/
 RUN sudo pacman -S --noconfirm python python-pip && \
