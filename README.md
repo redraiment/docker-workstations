@@ -1,12 +1,11 @@
 # ArchLinux docker image
-====
 
-This ArchLinux repository is the base for other Docker repositories.
+This ArchLinux [repository](https://github.com/redraiment/docker-archlinux) is the base for other Docker repositories.
 
 ## Flavors provide
 
 * FROM [ArchLinux](https://hub.docker.com/_/archlinux).
-* Setup USTC mirrors.
+* Set up USTC mirrors.
 * Set default user to redraiment.
 * Set default shell to fish.
 
