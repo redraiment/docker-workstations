@@ -1,6 +1,6 @@
 FROM redraiment/archlinux
 LABEL author="Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2022.08.30"
+LABEL version="2022.09.13"
 LABEL description="Clojure development environment"
 
 COPY --chown=redraiment:redraiment profiles.clj /home/redraiment/.lein/profiles.clj
