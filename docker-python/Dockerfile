@@ -1,6 +1,6 @@
 FROM redraiment/archlinux
 MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2022.09.13"
+LABEL version="2022.09.26"
 LABEL description="Python development environment"
 
 COPY --chown=redraiment:redraiment pip.conf /home/redraiment/.pip/
