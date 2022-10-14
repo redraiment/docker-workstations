@@ -1,6 +1,6 @@
 FROM haskell
 LABEL author="Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="0.0.3"
+LABEL version="2022.10.14"
 LABEL description="Haskell Workstation"
 
 RUN useradd -m -G root -s /bin/bash redraiment
