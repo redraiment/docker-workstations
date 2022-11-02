@@ -1,6 +1,6 @@
 FROM redraiment/archlinux
 MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2022.10.14"
+LABEL version="2022.11.02"
 LABEL description="C development environment"
 
 RUN sudo pacman -S --noconfirm \

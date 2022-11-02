@@ -1,12 +1,9 @@
 FROM redraiment/archlinux
 LABEL author="Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2022.10.14"
+LABEL version="2022.11.02"
 LABEL description="Clojure development environment"
 
-COPY --chown=redraiment:redraiment profiles.clj /home/redraiment/.lein/profiles.clj
-COPY --chown=redraiment:redraiment leiningen-2.9.10-standalone.jar /home/redraiment/.lein/self-installs/
-RUN sudo pacman -S --noconfirm jdk8-openjdk leiningen \
- && mkdir -p /home/redraiment/.m2/repository
+RUN sudo pacman -S --noconfirm jdk8-openjdk leiningen
 
 EXPOSE 9999
 

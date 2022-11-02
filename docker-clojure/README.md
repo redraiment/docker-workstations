@@ -11,7 +11,7 @@ This [repository](https://github.com/redraiment/docker-clojure) is my Clojure de
 1: start an empty headless nREPL on port 9999 in the background.
 
 ```shell
-docker run --rm -d -p 9999:9999 redraiment/clojure
+docker run --rm -v $HOME/.m2:/home/redraiment/.m2 -v $HOME/.lein:/home/redraiment/.lein -d -p 9999:9999 redraiment/clojure
 ```
 
 Now you can use cider to connect nREPL.
@@ -19,11 +19,11 @@ Now you can use cider to connect nREPL.
 2: create a new application project.
 
 ```shell
-docker run --rm -v $PWD:/home/redraiment/workspaces redraiment/clojure lein new app me.zzp/bootstrap
+docker run --rm -v $HOME/.m2:/home/redraiment/.m2 -v $HOME/.lein:/home/redraiment/.lein -v $PWD:/home/redraiment/workspaces redraiment/clojure lein new app me.zzp/bootstrap
 ```
 
 3: build an uberjar.
 
 ```shell
-docker run --rm -v $PWD:/home/redraiment/workspaces redraiment/clojure lein uberjar
+docker run --rm -v $HOME/.m2:/home/redraiment/.m2 -v $HOME/.lein:/home/redraiment/.lein -v $PWD:/home/redraiment/workspaces redraiment/clojure lein uberjar
 ```
