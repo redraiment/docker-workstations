@@ -1,0 +1,29 @@
+#!/bin/bash
+
+cd $(dirname "$0")/..
+
+# Upgrade offical images
+
+for image in archlinux ubuntu alpine openjdk clojure postgres nginx redis; do
+    echo -e "# Upgrade \033[4;32m$image\n\033[0m"
+    docker image pull "${image}"
+    echo
+done
+
+# Upgrade private images
+
+perl -i -p -e "s#^LABEL version=.*#LABEL version=\""$(date +'%Y.%m.%d')"\"#" docker-*/Dockerfile
+
+for image in archlinux c clojure python; do
+    cd docker-$image
+
+    echo -e "# Upgrade \033[4;32mdocker-$image\n\033[0m"
+    docker image rm "redraiment/${image}"
+    docker image build -t "redraiment/${image}:latest" .
+    docker image push "redraiment/${image}:latest"
+    docker image rm "redraiment/${image}:latest"
+    docker image pull "redraiment/${image}:latest"
+    echo
+
+    cd ..
+done

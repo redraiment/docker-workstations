@@ -1,4 +1,5 @@
 set -g -x PYENV_ROOT $HOME/.pyenv
+set -g -x PYTHON_BUILD_CACHE_PATH $PYENV_ROOT/cache
 set -g -a PATH $PYENV_ROOT/bin
 
 if type -q pyenv then
