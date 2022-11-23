@@ -1,2 +1,8 @@
-docker-haskell/
-docker-nodejs/
+# Ignore everthing
+*
+
+# Except workstations
+!archlinux
+!clojure
+!python
+!llvm
