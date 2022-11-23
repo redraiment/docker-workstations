@@ -1,8 +1,11 @@
 # Ignore everthing
 *
 
-# Except workstations
-!archlinux
-!clojure
-!python
-!llvm
+# Except public workstations
+!archlinux/
+!clojure/
+!python/
+!llvm/
+
+!LICENSE
+!README.md
