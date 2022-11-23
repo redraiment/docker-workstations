@@ -1,1 +1,2 @@
-leiningen-*-standalone.jar
+docker-haskell/
+docker-nodejs/

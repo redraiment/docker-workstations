@@ -14,7 +14,7 @@ done
 
 perl -i -p -e "s#^LABEL version=.*#LABEL version=\""$(date +'%Y.%m.%d')"\"#" docker-*/Dockerfile
 
-for image in archlinux c clojure python; do
+for image in archlinux python llvm clojure; do
     cd docker-$image
 
     echo -e "# Upgrade \033[4;32mdocker-$image\n\033[0m"
