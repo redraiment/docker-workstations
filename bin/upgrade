@@ -4,7 +4,7 @@ cd $(dirname "$0")/..
 
 # Upgrade offical images
 
-for image in archlinux ubuntu alpine openjdk clojure postgres nginx redis; do
+for image in archlinux; do
     echo -e "# Upgrade \033[4;32m$image\n\033[0m"
     docker image pull "${image}"
     echo
@@ -12,10 +12,15 @@ done
 
 # Upgrade private images
 
-perl -i -p -e "s#^LABEL version=.*#LABEL version=\""$(date +'%Y.%m.%d')"\"#" docker-*/Dockerfile
+if [ $# -eq 0 ]; then
+    # Default images
+    set archlinux python clojure
+fi
 
-for image in archlinux python llvm clojure; do
-    cd docker-$image
+for image in $@; do
+    cd $image
+
+    perl -i -p -e "s#^LABEL version=.*#LABEL version=\""$(date +'%Y.%m.%d')"\"#" Dockerfile
 
     echo -e "# Upgrade \033[4;32mdocker-$image\n\033[0m"
     docker image rm "redraiment/${image}"
