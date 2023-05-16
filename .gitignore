@@ -6,6 +6,7 @@
 !clojure/
 !python/
 !llvm/
+!alpine/
 
 # Except docs
 !LICENSE
