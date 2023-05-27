@@ -1,6 +1,6 @@
 FROM redraiment/archlinux
 LABEL author="Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2023.05.16"
+LABEL version="2023.05.27"
 LABEL description="Clojure development environment"
 
 RUN sudo pacman -S --noconfirm jdk-openjdk leiningen

@@ -1,9 +1,8 @@
 FROM alpine
 MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2023.05.16"
+LABEL version="2023.05.27"
 LABEL description="Alpine Workstation"
 
-COPY repositories /etc/apk/repositories
 RUN sed -i 's#https\?://[^/]*#https://mirrors.ustc.edu.cn#g' /etc/apk/repositories \
  && apk update \
  && apk add sudo fish vim ripgrep curl \
