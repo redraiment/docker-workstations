@@ -1,6 +1,6 @@
 FROM alpine
 MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2023.05.27"
+LABEL version="2023.06.04"
 LABEL description="Alpine Workstation"
 
 RUN sed -i 's#https\?://[^/]*#https://mirrors.ustc.edu.cn#g' /etc/apk/repositories \
