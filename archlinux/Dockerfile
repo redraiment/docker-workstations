@@ -1,6 +1,6 @@
 FROM archlinux
 MAINTAINER "Zhang, Zepeng <redraiment@gmail.com>"
-LABEL version="2023.06.23"
+LABEL version="2023.07.12"
 LABEL description="ArchLinux Workstation"
 
 COPY mirrorlist /etc/pacman.d/
