@@ -1,5 +1,5 @@
 # Ignore everthing
-*
+*/
 
 # Except public workstations
 !archlinux/
@@ -7,6 +7,8 @@
 !python/
 !llvm/
 !alpine/
+!postgres/
+!debian/
 
 # Except docs
 !LICENSE
