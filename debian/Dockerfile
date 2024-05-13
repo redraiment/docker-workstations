@@ -10,9 +10,12 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debi
  && apt-get upgrade --no-install-recommends -y \
  # 安装常用工具
  && apt-get install --no-install-recommends -y \
-      sudo fish vim-nox ripgrep tree \
+      sudo locales fish vim-nox ripgrep tree \
       ca-certificates gnupg binutils \
       curl wget \
+ # 生成编码
+ && sed -i -E -e 's/^# ((en_US|zh_CN)\.UTF-8)/\1/g' /etc/locale.gen \
+ && locale-gen \
  # 添加日常使用的用户
  && useradd -m -G sudo -s /usr/bin/fish redraiment \
  && sudo -u redraiment mkdir -p /home/redraiment/workspaces
